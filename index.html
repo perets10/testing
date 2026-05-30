@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель Модератора - Ukraine GTA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h2 class="section-title">Статистика <span class="section-subtitle">(Синхронізовано з базою)</span></h2>
+    
+    <div class="stats-grid">
+        <div class="stat-card stripe-purple">
+            <h4>Кількість доган</h4>
+            <div class="value" id="stat-strikes">0/3</div>
+        </div>
+        <div class="stat-card stripe-pink">
+            <h4>Кількість попереджень</h4>
+            <div class="value" id="stat-warnings">0/2</div>
+        </div>
+        <div class="stat-card stripe-green">
+            <h4>Кількість змін</h4>
+            <div class="value" id="stat-shifts">0</div>
+        </div>
+        <div class="stat-card stripe-orange">
+            <h4>Кількість покарань</h4>
+            <div class="value" id="stat-punishments">0</div>
+        </div>
+        <div class="stat-card stripe-blue">
+            <h4>Кількість попереджень гравцям</h4>
+            <div class="value" id="stat-player-warnings">0</div>
+        </div>
+        <div class="stat-card stripe-purple">
+            <h4>К-сть відповідей у "питання до тех-підтримки"</h4>
+            <div class="value" id="stat-support">0</div>
+        </div>
+        <div class="stat-card stripe-blue">
+            <h4>Кількість премій</h4>
+            <div class="value" id="stat-bonuses">0%</div>
+        </div>
+        <div class="stat-card stripe-red">
+            <h4>Кількість штрафів</h4>
+            <div class="value" id="stat-fines">0%</div>
+        </div>
+        <div class="stat-card stripe-green">
+            <h4>К-сть днів неактивів/відпусток</h4>
+            <div class="value" id="stat-vacations">0 Days</div>
+        </div>
+        <div class="stat-card stripe-blue">
+            <h4>Середній онлайн за тиждень</h4>
+            <div class="value" id="stat-weekly-avg">0 год. 0 хв.</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Оберіть дію</h2>
+
+    <div class="actions-grid">
+        <div class="action-card" id="btn-toggle-shift">
+            <div class="action-icon">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <h3 id="shift-action-title">Почати зміну</h3>
+            <p id="shift-action-desc">Зафіксувати початок робочого часу</p>
+        </div>
+
+        <div class="action-card" id="btn-history">
+            <div class="action-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3>Історія змін</h3>
+            <p>Переглянути попередні зміни</p>
+        </div>
+
+        <div class="action-card" id="btn-vacation">
+            <div class="action-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2c5.523 0 10 4.477 10 10a9.96 9.96 0 0 1-2.472 6.556l-1.423-1.423A7.97 7.97 0 0 0 19.99 12h-1.99a6 6 0 0 1-6-6V4A8.009 8.009 0 0 0 4 12H2c0-5.523 4.477-10 10-10zm0 13c-1.657 0-3-1.343-3-3h6c0 1.657-1.343 3-3 3zm0 2c2.761 0 5-2.239 5-5H7c0 2.761 2.239 5 5 5z"/></svg>
+            </div>
+            <h3>Відпустка/Неактив</h3>
+            <p>Оформити відпустку або неактив</p>
+        </div>
+
+        <div class="action-card" id="btn-leaderboard">
+            <div class="action-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15a4 4 0 100-8 4 4 0 000 8zm0 0v4m-4 0h8M4 9h2v2H4zm14 0h2v2h-2z"/></svg>
+            </div>
+            <h3>Лідерборд</h3>
+            <p>Рейтинг найактивніших модераторів</p>
+        </div>
+
+        <div class="action-card" id="btn-settings">
+            <div class="action-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Налаштування</h3>
+            <p>Змінити особисті дані</p>
+        </div>
+    </div>
+
+    <script type="module" src="src/shifts.js"></script>
+</body>
+</html>

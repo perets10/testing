@@ -1,0 +1,236 @@
+/* --- ОСНОВНІ НАЛАШТУВАННЯ ТА КОЛЬОРИ --- */
+:root {
+    --bg-main: #0b0f19;       /* Глибокий темний фон всього сайту */
+    --bg-card: #131926;       /* Фон карток статистики та дій */
+    --border-card: #1d2636;   /* Тонка рамка навколо карток */
+    --text-white: #ffffff;    /* Головний білий текст */
+    --text-muted: #718096;    /* Сірий колір для описів та підписів */
+    --accent-blue: #3b82f6;   /* Синій колір для ліній заголовків */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Контейнер, щоб сайт не розповзався на надшироких моніторах */
+.container, .auth-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- СТИЛІЗАЦІЯ ЗАГОЛОВКІВ (З синьою лінією) --- */
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 20px 0;
+}
+
+/* Синій маркер зліва від тексту заголовка */
+.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    background-color: var(--accent-blue);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: normal;
+}
+
+/* --- СІТКА ДЛЯ 10 КАРТОК СТАТИСТИКИ --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.stat-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    padding: 22px 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Діагональна кольорова смужка у верхньому лівому кутку картки */
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 45px;
+    height: 45px;
+    transform: rotate(45deg);
+}
+
+/* Градієнти для неонових смужок */
+.stripe-purple::before { background: linear-gradient(135deg, #7c3aed, transparent); }
+.stripe-pink::before { background: linear-gradient(135deg, #ec4899, transparent); }
+.stripe-green::before { background: linear-gradient(135deg, #10b981, transparent); }
+.stripe-orange::before { background: linear-gradient(135deg, #f59e0b, transparent); }
+.stripe-blue::before { background: linear-gradient(135deg, #3b82f6, transparent); }
+.stripe-red::before { background: linear-gradient(135deg, #ef4444, transparent); }
+
+.stat-card h4 {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card .value {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* --- СІТКА ДЛЯ КНОПОК ДІЙ --- */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.action-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 35px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ефект наведення на кнопку дії */
+.action-card:hover {
+    border-color: #2b3a54;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Кругла підкладка для іконки всередині кнопки */
+.action-icon {
+    width: 52px;
+    height: 52px;
+    background-color: #1a2333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: var(--accent-blue);
+}
+
+.action-card h3 {
+    font-size: 17px;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+}
+
+.action-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- АВТОРИЗАЦІЯ ТА РЕЄСТРАЦІЯ (`login.html`) --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #0b0f19;
+    border: 1px solid var(--border-card);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+/* Стандартна кнопка */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+/* Посилання для перемикання Вхід/Реєстрація */
+.auth-toggle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 20px;
+}
+
+.auth-toggle span {
+    color: var(--accent-blue);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.auth-toggle span:hover {
+    text-decoration: underline;
+}

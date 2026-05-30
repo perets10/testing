@@ -2,7 +2,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/fi
 import { doc, getDoc, updateDoc, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import { auth, db } from "./config.js";
 
-const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1504979591704481864/RvU_Gu_jE4LVFhWDsQnAKtaxuJGMGdgkNdne1JeGQlNNlFQQqnHH_XxrZ90wXBJZZGn8";
+const DISCORD_WEBHOOK_URL = "ТВIЙ_DISCORD_WEBHOOK_URL";
 let currentUserId = null;
 let userData = null;
 

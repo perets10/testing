@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизація - Ukraine GTA V</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div id="login-form-block" class="card auth-card">
+            <h2>Авторизація</h2>
+            <input type="email" id="login-email" placeholder="Електронна пошта" required>
+            <input type="password" id="login-password" placeholder="Пароль" required>
+            <button id="btn-submit-login" class="btn">Увійти</button>
+            <p class="auth-toggle">Немає акаунту? <span id="to-register">Зареєструватися</span></p>
+        </div>
+
+        <div id="register-form-block" class="card auth-card" style="display: none;">
+            <h2>Реєстрація модератора</h2>
+            <input type="text" id="reg-nickname" placeholder="Нікнейм (напр. Іван_Адмінов)" required>
+            <input type="email" id="reg-email" placeholder="Електронна пошта" required>
+            <input type="password" id="reg-password" placeholder="Пароль" required>
+            <button id="btn-submit-register" class="btn">Створити акаунт</button>
+            <p class="auth-toggle">Вже є акаунт? <span id="to-login">Увійти</span></p>
+        </div>
+    </div>
+
+    <script type="module" src="src/auth.js"></script>
+</body>
+</html>
